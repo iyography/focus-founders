@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -1347,7 +1347,7 @@ const visualizations = [
   { id: "orbit", name: "Skill Orbit", icon: Orbit, component: SkillOrbit },
 ];
 
-export default function PowerMap() {
+function PowerMapContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -1362,7 +1362,7 @@ export default function PowerMap() {
   const ActiveComponent = activeViz.component;
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#FAF6E3] relative">
+    <>
       <BackgroundVideo src={VIDEO_URL} />
 
       {/* Header */}
@@ -1433,6 +1433,16 @@ export default function PowerMap() {
           <span className="font-sans text-xs text-[#FAF6E3]/30 pointer-events-auto"><a href="/admin" className="hover:text-[#FAF6E3]/50 transition-colors">&copy;</a> 2026 Recess. All rights reserved.</span>
         </div>
       </footer>
+    </>
+  );
+}
+
+export default function PowerMap() {
+  return (
+    <div className="min-h-screen bg-[#0A0A0A] text-[#FAF6E3] relative">
+      <Suspense fallback={<div className="min-h-screen bg-[#0A0A0A]" />}>
+        <PowerMapContent />
+      </Suspense>
     </div>
   );
 }
