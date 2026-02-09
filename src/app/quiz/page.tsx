@@ -163,7 +163,7 @@ export default function Quiz() {
               <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 text-black border border-white/40 shadow-2xl">
                 <div className="text-center mb-8">
                   <h1 className="text-3xl font-bold mb-4">What type of business do you run?</h1>
-                  <p className="text-lg text-white/80">
+                  <p className="text-lg text-gray-600">
                     Choose the option that best describes your business model
                   </p>
                 </div>
@@ -173,12 +173,12 @@ export default function Quiz() {
                     <button
                       key={businessType.id}
                       onClick={() => selectBusinessType(businessType.id)}
-                      className="text-left p-6 bg-white/20 hover:bg-white/30 rounded-xl transition-all duration-300 border border-white/30 hover:border-yellow-400/50"
+                      className="text-left p-6 bg-white/80 hover:bg-white/90 rounded-xl transition-all duration-300 border border-gray-200 hover:border-blue-400"
                     >
                       <div className="text-4xl mb-4">{businessType.emoji}</div>
-                      <h3 className="text-xl font-semibold mb-2">{businessType.name}</h3>
-                      <p className="text-white/80 mb-4">{businessType.description}</p>
-                      <div className="text-sm text-yellow-400">
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900">{businessType.name}</h3>
+                      <p className="text-gray-700 mb-4">{businessType.description}</p>
+                      <div className="text-sm text-blue-600 font-medium">
                         Examples: {businessType.examples.join(', ')}
                       </div>
                     </button>
@@ -209,7 +209,7 @@ export default function Quiz() {
                     <span className="text-2xl font-semibold">{selectedType?.name}</span>
                   </div>
                   <h1 className="text-3xl font-bold mb-4">What stage is your business in?</h1>
-                  <p className="text-lg text-white/80">
+                  <p className="text-lg text-gray-600">
                     Choose the stage that best describes where you are now
                   </p>
                 </div>
@@ -219,16 +219,16 @@ export default function Quiz() {
                     <button
                       key={stage.id}
                       onClick={() => selectGrowthStage(stage.id)}
-                      className="w-full text-left p-6 bg-white/20 hover:bg-white/30 rounded-xl transition-all duration-300 border border-white/30 hover:border-yellow-400/50"
+                      className="w-full text-left p-6 bg-white/80 hover:bg-white/90 rounded-xl transition-all duration-300 border border-gray-200 hover:border-blue-400"
                     >
                       <div className="flex items-start">
                         <div className="text-3xl mr-4">{stage.emoji}</div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-2">
-                            <h3 className="text-xl font-semibold">{stage.name}</h3>
-                            <span className="text-yellow-400 font-medium">{stage.revenue}</span>
+                            <h3 className="text-xl font-semibold text-gray-900">{stage.name}</h3>
+                            <span className="text-blue-600 font-medium">{stage.revenue}</span>
                           </div>
-                          <p className="text-white/80">{stage.description}</p>
+                          <p className="text-gray-700">{stage.description}</p>
                         </div>
                       </div>
                     </button>
@@ -238,7 +238,7 @@ export default function Quiz() {
                 <div className="mt-8 text-center">
                   <button
                     onClick={() => setStep('business-type')}
-                    className="text-yellow-400 hover:text-yellow-300"
+                    className="text-blue-600 hover:text-blue-500 font-medium"
                   >
                     ← Back to business type
                   </button>
