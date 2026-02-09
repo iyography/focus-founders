@@ -161,10 +161,9 @@ export default function Quiz() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen relative overflow-hidden">
+        <div className="min-h-screen relative overflow-hidden flex items-center">
           <AutoPlayVideo src="/videos/rvids/19.mp4" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="relative z-20 pt-24">
-            <div className="max-w-4xl mx-auto px-6 py-12">
+          <div className="relative z-20 max-w-4xl mx-auto px-6 py-12 text-center text-black">
               <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 text-black border border-white/40 shadow-2xl">
                 <div className="text-center mb-8">
                   <h1 className="text-3xl font-bold mb-4">What type of business do you run?</h1>
@@ -203,10 +202,9 @@ export default function Quiz() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen relative overflow-hidden">
+        <div className="min-h-screen relative overflow-hidden flex items-center">
           <AutoPlayVideo src="/videos/rvids/19.mp4" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="relative z-20 pt-24">
-            <div className="max-w-4xl mx-auto px-6 py-12">
+          <div className="relative z-20 max-w-4xl mx-auto px-6 py-12 text-center text-black">
               <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 text-black border border-white/40 shadow-2xl">
                 <div className="text-center mb-8">
                   <div className="flex items-center justify-center mb-4">
