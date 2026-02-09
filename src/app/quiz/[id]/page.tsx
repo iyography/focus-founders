@@ -209,13 +209,13 @@ export default function QuizQuestion() {
       <>
         <Navbar />
         <div className="min-h-screen relative overflow-hidden pt-24 flex items-center justify-center">
-          <AutoPlayVideo src="/videos/222.mp4" className="absolute inset-0 w-full h-full object-cover opacity-100" />
+          <AutoPlayVideo src="/videos/rvids/19.mp4" className="absolute inset-0 w-full h-full object-cover" />
           <div className="relative z-20 text-white text-center">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8">
-              <h1 className="text-4xl font-bold mb-4">Question Not Found</h1>
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-white/40 shadow-2xl">
+              <h1 className="text-4xl font-bold mb-4 text-gray-900">Question Not Found</h1>
               <button 
                 onClick={() => router.push('/quiz')}
-                className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-3 rounded-full font-semibold"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold"
               >
                 Start Quiz
               </button>
@@ -232,20 +232,20 @@ export default function QuizQuestion() {
     <>
       <Navbar />
       <div className="min-h-screen relative overflow-hidden pt-24">
-        <AutoPlayVideo src="/videos/222.mp4" className="absolute inset-0 w-full h-full object-cover opacity-100" />
+        <AutoPlayVideo src="/videos/rvids/19.mp4" className="absolute inset-0 w-full h-full object-cover" />
         <div className="relative z-20 max-w-4xl mx-auto px-6 py-12">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-white">
+          <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 text-black border border-white/40 shadow-2xl">
             <div className="mb-8">
               <div className="flex justify-between items-center mb-4">
-                <h1 className="text-3xl font-bold">ADHD Entrepreneur Assessment</h1>
-                <span className="text-yellow-400 font-semibold">
+                <h1 className="text-3xl font-bold text-gray-900">ADHD Entrepreneur Assessment</h1>
+                <span className="text-blue-600 font-semibold">
                   {currentId} of {questions.length}
                 </span>
               </div>
               
-              <div className="w-full bg-white/20 rounded-full h-3 mb-4">
+              <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
                 <div 
-                  className="bg-gradient-to-r from-yellow-400 to-orange-400 h-3 rounded-full transition-all duration-300"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -253,7 +253,7 @@ export default function QuizQuestion() {
               {currentId > 1 && (
                 <button
                   onClick={goBack}
-                  className="mb-4 text-yellow-400 hover:text-yellow-300 flex items-center"
+                  className="mb-4 text-blue-600 hover:text-blue-500 flex items-center font-medium"
                 >
                   ← Previous Question
                 </button>
@@ -261,7 +261,7 @@ export default function QuizQuestion() {
             </div>
             
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-8">
+              <h2 className="text-2xl font-semibold mb-8 text-gray-900">
                 {currentQuestion.question}
               </h2>
               
@@ -270,15 +270,15 @@ export default function QuizQuestion() {
                   <button
                     key={index}
                     onClick={() => handleAnswer(option.points)}
-                    className="w-full text-left p-6 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 border border-white/20 hover:border-yellow-400/50"
+                    className="w-full text-left p-6 bg-white/80 hover:bg-white/90 rounded-xl transition-all duration-300 border border-gray-200 hover:border-blue-400"
                   >
-                    <span className="text-lg">{option.text}</span>
+                    <span className="text-lg text-gray-900">{option.text}</span>
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="text-center text-white/60">
+            <div className="text-center text-gray-600">
               <p className="text-sm">
                 This assessment helps us recommend the perfect ADHD-friendly business support for your current stage.
               </p>
